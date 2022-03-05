@@ -22,13 +22,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit from osborn device
 $(call inherit-product, device/smartisan/osborn/device.mk)
 
-# Inherit some common MoKee stuff.
-$(call inherit-product, vendor/mokee/config/common_full_phone.mk)
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.mk.maintainer=XiNGRZ
 
-PRODUCT_NAME := mokee_osborn
+# Device identifier. This must come after all inclusions.
+PRODUCT_NAME := lineage_osborn
 PRODUCT_BRAND := SMARTISAN
 PRODUCT_DEVICE := osborn
 PRODUCT_MANUFACTURER := smartisan
@@ -36,10 +37,12 @@ PRODUCT_MODEL := OS105
 
 PRODUCT_GMS_CLIENTID_BASE := android-smartisan
 
+# Device prop
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="osborn" \
     PRIVATE_BUILD_DESC="osborn-user 7.1.1 NGI77B 1 dev-keys"
 
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := Android/osborn/osborn:7.1.1/NGI77B/1571974731:user/dev-keys
 
 # Sign bootable images
