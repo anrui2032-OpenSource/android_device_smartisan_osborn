@@ -22,12 +22,12 @@
 #
 
 # Inherit from sdm660-common
--include device/smartisan/sdm660-common/BoardConfigCommon.mk
+include device/smartisan/sdm660-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/smartisan/osborn
 
 # Releasetools
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
-# Inherit proprietary files
--include vendor/smartisan/osborn/BoardConfigVendor.mk
+# Inherit the proprietary files
+include vendor/smartisan/osborn/BoardConfigVendor.mk

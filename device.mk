@@ -24,5 +24,5 @@
 # Inherit from sdm660-common
 $(call inherit-product, device/smartisan/sdm660-common/common.mk)
 
-# Inherit proprietary files
+# Inherit the proprietary files
 $(call inherit-product, vendor/smartisan/osborn/osborn-vendor.mk)
